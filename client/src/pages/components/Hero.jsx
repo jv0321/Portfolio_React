@@ -10,12 +10,6 @@ function Hero() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [speed, setSpeed] = useState(150);
 
-  const sentences = [
-    'Sentence 1',
-    'Sentence 2',
-    'Sentence 3'
-  ];
-
   useEffect(() => {
     const handleTyping = () => {
       const currentSentence = sentences[currentSentenceIndex];
@@ -38,7 +32,7 @@ function Hero() {
     const typingTimeout = setTimeout(handleTyping, speed);
 
     return () => clearTimeout(typingTimeout);
-  }, [displayText, isDeleting, speed, currentSentenceIndex,]);
+  }, [displayText, isDeleting, speed,]);
 
   return (
     <section className="hero">
